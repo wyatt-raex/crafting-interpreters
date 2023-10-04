@@ -1,0 +1,14 @@
+// Your first Lox program!
+/*
+  This
+  is
+  a
+  multi
+  line
+  comment!
+*/
+
+fun main() {
+  var msg = "Hello, World!";
+  print msg;
+}

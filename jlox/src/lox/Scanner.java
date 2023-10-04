@@ -88,7 +88,18 @@ class Scanner {
         if (match('/')) { // This lexeme is a comment.
           // A comment goes until the end of the line.
           while (peek() != '\n' && !isAtEnd()) advance();
-        } 
+        }
+        else if (match('*')) { // This lexeme is a block comment.
+          while (peek() != '*' && peekNext() != '/' && !isAtEnd()) {
+            if (peek() == '\n') line++;
+            advance();
+          }
+          //TODO: Implement block comment within block comments?
+
+          // Consume the final "*/".
+          advance();
+          advance();
+        }
         else { // Division lexeme
           addToken(SLASH);
         }

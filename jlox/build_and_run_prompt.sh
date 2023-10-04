@@ -1,2 +1,2 @@
 javac ./src/lox/*.java
-java -cp ./src/ lox.Lox
+java -cp ./src/ lox.Lox $@
